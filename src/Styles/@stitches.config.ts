@@ -99,10 +99,10 @@ export const {
     } , 
     media:{
         "bp1":"(max-width:1000px)",
-        "bp2":"(max-width:750px)",
-        "bp2-1":"(max-width:700px)",
-        "bp3":"(max-width:550px)",
-        "bp4":"(max-width:410px)",
+        "bp2":"(max-width:650px)",
+        "bp3":"(max-width:500px)",
+        // "bp3":"(max-width:550px)",
+        // "bp4":"(max-width:410px)",
 
     },
     utils:{
