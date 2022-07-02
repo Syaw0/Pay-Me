@@ -5,25 +5,27 @@ import TopNav from './components/topNav';
 import DetailSection from './components/detailSection';
 import Inputs from './components/inputs';
 import Footer from './components/footer';
-
-window.addEventListener("resize", () => {
-  let root = document.getElementById("root")!
-  // root.width = window.innerWidth;
-  console.log(root)
-});
-
+import ErrorCon from './components/Error';
+import { useStore } from './store/store';
+import { isBuffer } from 'util';
 
 function App() {
 
   globalStyle()
+const isError = useStore(state=>state.isError)
 
-
+  if(isError){
+    setTimeout(()=>{
+      window.location.reload()
+    } , 3000)
+  }
 
   return (
     <Flex  id='wrapper' dir={"column"} justify="start" align={"center"} data-testid="app" css={{
       // padding:"$2 300px" ,
       width:"600px",
       minHeight:"100vh",
+      
       "@bp2":{
         width:"100%",
         padding:"$1"
@@ -34,6 +36,7 @@ function App() {
       <DetailSection/>
       <Inputs/>
       <Footer/>
+      {isError && <ErrorCon/>}
     </Flex>
   );
 }

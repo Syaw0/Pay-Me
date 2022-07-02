@@ -15,14 +15,13 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.7.4",
-    "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4",
     "zustand": "^4.0.0-rc.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

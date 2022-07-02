@@ -54,6 +54,8 @@ const Input = styled("input", {
                 flex_r:"",
                 jc_ac:"",
                 textAlign:"center",
+                cursor:"pointer",
+
                 "@bp3":{
                     width:"10px",
                     subhead2:"600"

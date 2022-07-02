@@ -1,9 +1,47 @@
-import React from "react";
+import { time } from "console";
+import React ,{useEffect, useState} from "react";
 import Flex from "../Styles/styledComponent/Flex";
 import Text from "../Styles/styledComponent/Text";
 
 
 function TopNav (){
+
+    const [timer,setTimer] = useState({minute : 6 , second:0})
+    let minute:{[index:string]:any}|string = timer.minute.toString()
+    let sec:{[index:string]:any}|string = timer.second.toString()
+    sec = sec.length!== 2 ?[0,sec] : [sec[0],sec[1]]
+    minute = minute.length!== 2 ?[0,minute] : [minute[0],minute[1]]
+
+    useEffect(()=>{
+
+        let interval  = setTimeout(()=>{   
+            if(timer.second === 0  ){
+                if(timer.minute === 0){
+                    throw new Error("time end")
+                }else{
+                    let newmin = timer.minute - 1 
+                    setTimer({minute:newmin ,second:59 })
+                }
+            }else{
+                let newsec = timer.second - 1
+                setTimer(state=>{return{...state, second:newsec}})
+            }
+        },1000)
+
+
+    })
+
+
+    const makeTicToc = ()=>{
+
+
+
+
+
+        
+    }
+
+
     return(
         <Flex dir={"row"} justify="between" align={"center"} css={{
             width:"100%",
@@ -43,7 +81,7 @@ function TopNav (){
                 padding:"4px $1",
                 borderRadius:"8px",
 
-            }}>0</Text>
+            }}>{minute[0]}</Text>
                         <Text css={{
                 backgroundColor:"$primary",
                 color:"$onPrimary",
@@ -51,7 +89,7 @@ function TopNav (){
                 padding:"4px $1",
                 borderRadius:"8px",
 
-            }}>1</Text>
+            }}>{minute[1]}</Text>
 
             <Text css={{
                 color:"$primary",
@@ -66,7 +104,7 @@ function TopNav (){
                 padding:"4px $1",
                 borderRadius:"8px",
 
-            }}>2</Text>
+            }}>{sec[0]}</Text>
                         <Text css={{
                 backgroundColor:"$primary",
                 color:"$onPrimary",
@@ -74,7 +112,7 @@ function TopNav (){
                 padding:"4px $1",
                 borderRadius:"8px",
 
-            }}>3</Text>
+            }}>{sec[1]}</Text>
         </Flex>
     
         </Flex>
