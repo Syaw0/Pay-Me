@@ -26,7 +26,7 @@ function Inputs_password (){
             <Text>Password</Text>
             <Text>Enter your dynamic password</Text>
             </Flex>
-            <Flex onClick={(e)=>{HandleInput(e)}} justify={"center"} align="center" css={{
+            <Flex data-testid="passwordCon" onClick={(e)=>{HandleInput(e)}} justify={"center"} align="center" css={{
                 width:"40%",
                 "@bp3":{
                     width:"100%",
@@ -70,7 +70,7 @@ function Inputs_password (){
 
                         }
                     }}>
-                    <Input tabIndex={8}  inputType={"otp"} type="password" css={{
+                    <Input data-testid="first_input_password"  tabIndex={8}  inputType={"otp"} type="password" css={{
                         border:"none",
                         width:"100%",
                     }}></Input>

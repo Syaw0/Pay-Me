@@ -34,7 +34,7 @@ function Inputs_expireDate (){
                     width:"100%",
                 },
             }}>
-            <Flex  onClick={(e)=>{HandleInput(e)}} justify={"between"} align="center" css={{
+            <Flex data-testid="ExpireCon"  onClick={(e)=>{HandleInput(e)}} justify={"between"} align="center" css={{
                 // width:"20%",
                 "@bp3":{
                     width:"100%",
@@ -76,8 +76,8 @@ function Inputs_expireDate (){
                             
                         }
                     }}>
-                    <Input tabIndex={4} maxLength={1} inputType={"otp"}></Input>
-                    <Input tabIndex={5} maxLength={1} inputType={"otp"}></Input>
+                    <Input data-testid="first_input_exp1"  tabIndex={4} maxLength={1} inputType={"otp"}></Input>
+                    <Input data-testid="second_input_exp1"  tabIndex={5} maxLength={1} inputType={"otp"}></Input>
 
                     </Flex>
 

@@ -24,7 +24,7 @@ function Inputs_cvcNumber (){
             <Text>CVC Number</Text>
             <Text>Enter the 3 or 4 digit CVC number</Text>
             </Flex>
-            <Flex onClick={(e)=>{HandleInput(e)}} justify={"between"} align="center" css={{
+            <Flex data-testid="cvcCon" onClick={(e)=>{HandleInput(e)}} justify={"between"} align="center" css={{
                 width:"40%",
                 "@bp3":{
                     width:"100%"
@@ -66,8 +66,8 @@ function Inputs_cvcNumber (){
 
                         }
                     }}>
-                    <Input tabIndex={2} maxLength={1} inputType={"otp"}></Input>
-                    <Input maxLength={1} inputType={"otp"}></Input>
+                    <Input data-testid="first_input_cvc" tabIndex={2} maxLength={1} inputType={"otp"}></Input>
+                    <Input  data-testid="second"   maxLength={1} inputType={"otp"}></Input>
                     <Input maxLength={1} inputType={"otp"}></Input>
                     <Input tabIndex={3} maxLength={1} inputType={"otp"}></Input>
                     <Ico_Pad width="24" height="24"/>

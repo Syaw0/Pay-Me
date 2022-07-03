@@ -1,5 +1,6 @@
 import { time } from "console";
 import React ,{useEffect, useState} from "react";
+import { useStore } from "../store/store";
 import Flex from "../Styles/styledComponent/Flex";
 import Text from "../Styles/styledComponent/Text";
 
@@ -11,13 +12,14 @@ function TopNav (){
     let sec:{[index:string]:any}|string = timer.second.toString()
     sec = sec.length!== 2 ?[0,sec] : [sec[0],sec[1]]
     minute = minute.length!== 2 ?[0,minute] : [minute[0],minute[1]]
-
+    const setIsError = useStore(state=>state.setIsError)
     useEffect(()=>{
 
         let interval  = setTimeout(()=>{   
             if(timer.second === 0  ){
                 if(timer.minute === 0){
                     throw new Error("time end")
+                    setIsError(false)
                 }else{
                     let newmin = timer.minute - 1 
                     setTimer({minute:newmin ,second:59 })
@@ -30,16 +32,6 @@ function TopNav (){
 
 
     })
-
-
-    const makeTicToc = ()=>{
-
-
-
-
-
-        
-    }
 
 
     return(

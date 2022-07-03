@@ -12,7 +12,7 @@ function Inputs_cardNumber (){
         <Text>Card Number</Text>
         <Text>Enter the 16-digit card number</Text>
 
-        <Flex onClick={HandleInput} justify={"between"} align="center" css={{
+        <Flex data-testid="cardNumberCon" onClick={HandleInput} justify={"between"} align="center" css={{
             height:"100%",
             "& svg:first-child":{
                 fill:"$onBg500"
@@ -71,8 +71,8 @@ function Inputs_cardNumber (){
                         jc_ac:"",
                     }
                 }}>
-                <Input maxLength={1} inputType={"otp"}></Input>
-                <Input maxLength={1} inputType={"otp"}></Input>
+                <Input data-testid="first_input_card" maxLength={1} inputType={"otp"}></Input>
+                <Input data-testid="second_input_card" maxLength={1} inputType={"otp"}></Input>
                 <Input maxLength={1} inputType={"otp"}></Input>
                 <Input maxLength={1} inputType={"otp"}></Input>
                 <Text>-</Text>
